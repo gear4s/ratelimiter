@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Original work Copyright 2013 Arnaud Porterie
 # Modified work Copyright 2016 Frazer McLean
+# Modified work Copyright 2021 Aaron Marais
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,14 +17,19 @@
 
 import sys
 
-__author__ = 'Frazer McLean <frazer@frazermclean.co.uk>'
-__version__ = '1.2.0.post0'
+__author__ = 'Aaron Miaras <its_me@aaronleem.co.za>'
+__version__ = '1.3.0'
 __license__ = 'Apache'
 __description__ = 'Simple python rate limiting object'
 
 # Async support is provided only on Python 3.5+
-if sys.version_info >= (3, 5):
-    from ._async import AsyncRateLimiter as RateLimiter
+PY35 = sys.version_info >= (3, 5)
+PY39 = sys.version_info >= (3, 9)
+
+if PY39:
+    from ._async_39 import AsyncRateLimiter as RateLimiter
+elif PY35:
+    from ._async_35 import AsyncRateLimiter as RateLimiter
 else:
     from ._sync import RateLimiter
 
