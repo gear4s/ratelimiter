@@ -43,7 +43,7 @@ setup(
     long_description=open('README.rst').read(),
     author=AUTHOR,
     author_email=EMAIL,
-    url='https://github.com/RazerM/ratelimiter',
+    url='https://github.com/gear4s/ratelimiter',
     packages=['ratelimiter'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

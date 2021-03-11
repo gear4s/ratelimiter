@@ -18,7 +18,7 @@
 import sys
 
 __author__ = 'Aaron Miaras <its_me@aaronleem.co.za>'
-__version__ = '1.3.0'
+__version__ = '1.3.0-1'
 __license__ = 'Apache'
 __description__ = 'Simple python rate limiting object'
 
