@@ -32,4 +32,5 @@ class AsyncRateLimiter(RateLimiter):
                     await asyncio.sleep(sleeptime)
             return self
 
-    __aexit__ = asyncio.coroutine(RateLimiter.__exit__)
+    async def __aexit__(self, exc_type, exc_value, traceback):
+        return super(AsyncRateLimiter, self).__exit__(exc_type, exc_value, traceback)
